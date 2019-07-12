@@ -11,6 +11,7 @@ mongoose.connect(mongoURL, {useNewUrlParser: true}, (err) => {
         console.log('todo chido en mongo...!!');  
     } 
 });
+//const URL = 'http://68.183.153.133:1919/parse/classes'
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -18,6 +19,10 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.send('<h1> Heroku APP </h1>');
 })
+
+// app.get(`/Campaign/${id}`, (req, res) => {
+
+// })
 
 app.get('/users', (req, res) => {
     User.find().exec((err, user) => {
