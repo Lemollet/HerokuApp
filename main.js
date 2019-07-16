@@ -3,8 +3,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const mongoURL = 'mongodb+srv://Moy1234:Moy1234@firstdb-5axkr.mongodb.net/test?retryWrites=true&w=majority';
 const {User} = require('./models/user');
+const cors = require('cors')
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 mongoose.connect(mongoURL, {useNewUrlParser: true}, (err) => {
     if (!err) {
